@@ -1,2 +1,49 @@
+body {
+        background-image:url('../images/wallpaper-610704_1280.png');
+        margin-top: 0;
+        margin-left: 0;
+        background-size: cover;
+}
+header{
+    background-color: rgb(228, 236, 220);
+    margin-top: 20px;
+    
+       
+}
 
-header{background-color: chartreuse}
+#bravo{
+    border: 2px red solid;
+    background-color: bisque;
+   
+    margin-top: 12px;
+}
+
+#charlie{
+    border: 2px greenyellow solid;
+    background-color: rgb(212, 176, 99);
+    margin-top: 12px;
+    
+}
+
+#delta{
+    border: 2px black solid;
+    background-color: rgb(108, 124, 218);
+    margin-top: 12px;
+  
+}
+
+#echo{
+    border: 2px violet solid;
+    background-color: rgb(240, 138, 209);
+    margin-top: 12px;
+    
+   
+}
+
+#foxtrot{
+    border: 2px white solid;
+    background-color: rgb(221, 219, 113);
+    margin-top: 12px;
+    
+   
+}
