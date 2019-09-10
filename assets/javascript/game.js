@@ -56,27 +56,25 @@ $(".crystalimg").on("click", function() {
     
     var crystalValue = $(this).attr("data-crystalvalue");
     crystalValue = parseInt(crystalValue);
-    Score + crystalValue;
-    $("#Score-text").text(Score);  
-
-});
-
-
+    score += crystalValue;
+    $("#score-text").html("Score: " + score);  
 
 
 
 
 //if score  === target trigger wins incriment up and start over
-if (score === target) {
+if (score == target) {
     wins++;
-    $("#wins-text").text(wins)
+  //  console.log(winner winner chicken dinner!);
+    $("#wins-text").text(wins);
     start();
 };
 
 //or if score > target  trigger loss incrimint up and start over
  if (score > target){
     losses++;
-    $("#losses-text").text(losses)
+  //  console.log(looooossssseeeerrrr);
+    $("#losses-text").text(losses);
     start();
 };
-
+});
