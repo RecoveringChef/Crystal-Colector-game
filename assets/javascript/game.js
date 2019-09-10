@@ -12,14 +12,14 @@ var blue;
 var purple;
 var green;
 
-
+start();
 
 function start(){
     generate();
-    $("#target-text").text(target);
-    $("#score-text").text(score);
-    $("#wins-text").text(wins);
-    $("#losses-text").text(losses);
+    $("#target-text").html("Target: " + target);
+    $("#score-text").html("Score: " + score);
+    $("#wins-text").html("Wins: " + wins);
+    $("#losses-text").html("Losses: " + losses);
     $("#red").attr("data-crystalvalue", red);
     $("#blue").attr("data-crystalvalue", blue);
     $("#green").attr("data-crystalvalue", green);
@@ -46,7 +46,7 @@ function generate(){
 
 };
 
-start();
+
 
 //function to add values of gems to score and output to html
 $(".crystalimg").on("click", function() {
@@ -56,7 +56,7 @@ $(".crystalimg").on("click", function() {
     
     var crystalValue = $(this).attr("data-crystalvalue");
     crystalValue = parseInt(crystalValue);
-    Score += crystalValue;
+    Score + crystalValue;
     $("#Score-text").text(Score);  
 
 });
