@@ -27,6 +27,21 @@ function start(){
 
 };
 
+function restart(){
+    generate();
+    score = 0;
+    $("#target-text").html("Target: " + target);
+    $("#score-text").html("Score: " + score);
+    $("#wins-text").html("Wins: " + wins);
+    $("#losses-text").html("Losses: " + losses);
+    $("#red").attr("data-crystalvalue", red);
+    $("#blue").attr("data-crystalvalue", blue);
+    $("#green").attr("data-crystalvalue", green);
+    $("#purple").attr("data-crystalvalue", purple);
+
+};
+
+
 
 function generate(){
 
@@ -65,16 +80,16 @@ $(".crystalimg").on("click", function() {
 //if score  === target trigger wins incriment up and start over
 if (score == target) {
     wins++;
-  //  console.log(winner winner chicken dinner!);
+    console.log("winner winner chicken dinner");
     $("#wins-text").text(wins);
-    start();
+    restart();
 };
 
 //or if score > target  trigger loss incrimint up and start over
  if (score > target){
     losses++;
-  //  console.log(looooossssseeeerrrr);
+    console.log("looooossssseeeerrrr");
     $("#losses-text").text(losses);
-    start();
+    restart();
 };
 });
