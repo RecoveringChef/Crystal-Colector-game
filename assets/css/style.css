@@ -5,36 +5,40 @@ body {
         background-size: cover;
 }
 header{
-    background-color: rgb(228, 236, 220);
+    background-color: rgb(147, 224, 75);
     margin-top: 20px;
+    text-align: center;
+    font-size: 4rem;
+    border: 2px solid black;
+
     
        
 }
 
 #bravo{
-    border: 2px red solid;
-    background-color: bisque;
+    border: 2px black solid;
+    background-color: rgb(106, 166, 235);
    
     margin-top: 12px;
 }
 
 #charlie{
-    border: 2px greenyellow solid;
-    background-color: rgb(212, 176, 99);
+    border: 2px  black solid;
+    background-color: rgb(212, 99, 212);
     margin-top: 12px;
     
 }
 
 #delta{
     border: 2px black solid;
-    background-color: rgb(108, 124, 218);
+    background-color: rgb(226, 98, 98);
     margin-top: 12px;
   
 }
 
 #echo{
-    border: 2px violet solid;
-    background-color: rgb(240, 138, 209);
+    border: 2px whitesmoke solid;
+    background-color:black;
     margin-top: 12px;
     
    

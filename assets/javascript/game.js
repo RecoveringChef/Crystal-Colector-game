@@ -1,45 +1,82 @@
 //test hook up to js sheet
 console.log ("is this thing on?")
 
-// variabel needed
+// variable needed
 
 var wins = 0;
 var losses = 0;
-var target = [Math.floor(Math.random() * (100 - 20) +20)];
+var target;
 var score = 0;
-var red =  [Math.floor(Math.random() * (13 - 5) +5)];
-var blue =  [Math.floor(Math.random() * (6- 2) + 2)];
-var purple =  [Math.floor(Math.random() * (13 - 1) + 1)];
-var green =  [Math.floor(Math.random() * (3 - 1) + 1)];
+var red;
+var blue;
+var purple;
+var green;
 
 
 
-var winsText = document.getElementById("wins-text") + wins;
-var lossesText = document.getElementById("losses-text") + losses;
-var winsText = document.getElementById("target-text") + target;
-var lossesText = document.getElementById("score-text");
+function start(){
+    generate();
+    $("#target-text").text(target);
+    $("#score-text").text(score);
+    $("#wins-text").text(wins);
+    $("#losses-text").text(losses);
+    $("#red").attr("data-crystalvalue", red);
+    $("#blue").attr("data-crystalvalue", blue);
+    $("#green").attr("data-crystalvalue", green);
+    $("#purple").attr("data-crystalvalue", purple);
+
+};
 
 
-//generate target random number and output to html
-//var target = target[Math.floor(Math.random() * (58 - 28 + 1))];
+function generate(){
 
- console.log("new target is: " + target) ;
- console.log("new red: " + red) ;
- console.log("new blue: " + blue);
- console.log("new green: " + green) ;
- console.log("new purple: " + purple) ;
+    target = [Math.floor(Math.random() * (99 - 30) +30)];
+    red =  [Math.floor(Math.random() * (12 - 5) +5)];
+    blue =  [Math.floor(Math.random() * (6- 2) + 2)];
+    purple =  [Math.floor(Math.random() * (12 - 1) + 1)];
+    green =  [Math.floor(Math.random() * (3 - 1) + 1)];
 
 
-//generate random values for the 4 gems
+    console.log("new target is: " + target);
+    console.log("new red: " + red) ;
+    console.log("new blue: " + blue);
+    console.log("new green: " + green) ;
+    console.log("new purple: " + purple) ;
+   
 
+};
+
+start();
 
 //function to add values of gems to score and output to html
+$(".crystalimg").on("click", function() {
+    if (score >= target) {
+        return;
+    }             
+    
+    var crystalValue = $(this).attr("data-crystalvalue");
+    crystalValue = parseInt(crystalValue);
+    Score += crystalValue;
+    $("#Score-text").text(Score);  
+
+});
 
 
-//if score  === target trigger wins incriment up and reset
 
 
-//else score > target  trigger loss incrimint up and reset
 
 
-// gems should be bootstrap cards
+//if score  === target trigger wins incriment up and start over
+if (score === target) {
+    wins++;
+    $("#wins-text").text(wins)
+    start();
+};
+
+//or if score > target  trigger loss incrimint up and start over
+ if (score > target){
+    losses++;
+    $("#losses-text").text(losses)
+    start();
+};
+
